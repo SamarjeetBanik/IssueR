@@ -10,12 +10,12 @@ function saveIssue(e) {
 	var ticketNo = chance.zip()
     var issueStatus = "Open"
 
-	console.log(name)
-	console.log(empid)
-	console.log(department)
-	console.log(description)
-	console.log(issueId)
-	console.log(ticketNo)
+	// console.log(name)
+	// console.log(empid)
+	// console.log(department)
+	// console.log(description)
+	// console.log(issueId)
+	// console.log(ticketNo)
 
     var issue = {
         id: issueId,
@@ -53,11 +53,11 @@ var setStatusClosed = (id) => {
 
     localStorage.setItem("issues", JSON.stringify(issues))
 
-    getAllIssues();
+    getAllIssues()
 }
 
 var deleteIssue = (id) => {
-	var issues = JSON.parse(localStorage.getItem("issues"));
+	var issues = JSON.parse(localStorage.getItem("issues"))
 
 	for (var i = 0; i < issues.length; i++) {
 		if (issues[i].id == id) {
@@ -65,9 +65,9 @@ var deleteIssue = (id) => {
 		}
 	}
 
-	localStorage.setItem("issues", JSON.stringify(issues));
+	localStorage.setItem("issues", JSON.stringify(issues))
 
-	getAllIssues();
+	getAllIssues()
 }
 
 var getAllIssues = () => {
