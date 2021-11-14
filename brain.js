@@ -8,7 +8,13 @@ function saveIssue(e) {
 
     var issueId = chance.guid()
 	var ticketNo = chance.zip()
-    var issueStatus = "Open"
+	
+	var assignedFirst = chance.first()
+	var assignedLast = chance.last()
+	var assigned = assignedFirst + " " + assignedLast
+	var assignedContact = assignedFirst.toLowerCase() + assignedLast.toLowerCase()
+    
+	var issueStatus = "Open"
 
 	// console.log(name)
 	// console.log(empid)
@@ -24,6 +30,8 @@ function saveIssue(e) {
         empid: empid,
         dep: department,
 		desc: description,
+		assist: assigned,
+		assistEmail: assignedContact,
         status: issueStatus
     }
 
@@ -77,10 +85,10 @@ var getAllIssues = () => {
 	issuesList.innerHTML = ''
 
   	for (var i = 0; i < issues.length; i++) {
-		var assignedFirst = chance.first()
-		var assignedLast = chance.last()
-		var assigned = assignedFirst + " " + assignedLast
-		var assignedContact = assignedFirst.toLowerCase() + assignedLast.toLowerCase()
+		// var assignedFirst = chance.first()
+		// var assignedLast = chance.last()
+		// var assigned = assignedFirst + " " + assignedLast
+		// var assignedContact = assignedFirst.toLowerCase() + assignedLast.toLowerCase()
 		// console.log(assignedContact)
 
 		if(issues[i].status == "Open") {
@@ -88,12 +96,12 @@ var getAllIssues = () => {
 										// '<h3 class="card-header">' + issues[i].desc + '</h3>' +
 										'<div class="card-body">'+
 											'<h6>Issue ID: ' + issues[i].id + '</h6>' +
-											'<h5>Ticket No.: ' + issues[i].ticket + '</h6>' +
+											'<h5>Ticket No.: ' + issues[i].ticket + '</h5>' +
 											'<p><span class="badge rounded-pill bg-success text-light">' + issues[i].status + '</span></p>' +
 											'<h3>' + issues[i].desc + '</h3>' +
 											'<p><b>Issued By</b>: ' + issues[i].name + ' - ' + issues[i].empid + '</p>' +
 											// '<p><b>Assigned To</b>: <a href="' + assignedContact + '@gmail.com">' + assigned + '</a></p>' +
-											'<p><b>Assigned To</b>: ' + assigned + ' (' + assignedContact + '@gmail.com)</p>' +
+											'<p><b>Assigned To</b>: ' + issues[i].assist + ' (' + issues[i].assistEmail + '@gmail.com)</p>' +
 											'<button class="btn btn-warning" onclick="setStatusClosed(\''+ issues[i].id +'\')">Close</button> ' +
 											'<button class="btn btn-danger" onclick="deleteIssue(\''+ issues[i].id +'\')">Delete</button>' +
 										'</div>' +
@@ -102,12 +110,12 @@ var getAllIssues = () => {
 			issuesList.innerHTML += '<div class="card">' + 
 										'<div class="card-body">'+
 											'<h6>Issue ID: ' + issues[i].id + '</h6>' +
-											'<h5>Ticket No.: ' + issues[i].ticket + '</h6>' +
+											'<h5>Ticket No.: ' + issues[i].ticket + '</h5>' +
 											'<p><span class="badge rounded-pill bg-danger text-light">' + issues[i].status + '</span></p>' +
 											'<h3>' + issues[i].desc + '</h3>' +
 											'<p><b>Issued By:</b> ' + issues[i].name + ' - ' + issues[i].empid + '</p>' +
 											// '<p><b>Assigned To</b>: <a href="' + assignedContact + '@gmail.com">' + assigned + '</a></p>' +
-											'<p><b>Assigned To</b>: ' + assigned + ' (' + assignedContact + '@gmail.com)</p>' +
+											'<p><b>Assigned To</b>: ' + issues[i].assist + ' (' + issues[i].assistEmail + '@gmail.com)</p>' +
 											'<button class="btn btn-danger" onclick="deleteIssue(\''+ issues[i].id +'\')">Delete</button>' +
 										'</div>' +
 									'</div><br>'
