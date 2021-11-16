@@ -39,14 +39,14 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description <b><span class="text-danger">*</span></b></label>
-                    <input type="text" class="form-control" id="description" placeholder="Describe your Issue">
+                    <input type="text" class="form-control" id="description" onkeyup="validateBtn()" placeholder="Describe your Issue">
                 </div>
                 <div class="form-group">
                     <label for="attach">Attach Supportive Documents (If any)</label>
                     <input type="file" class="form-control-file" id="attach">
                 </div>
                 <center>
-                    <button type="submit" class="btn btn-success">Raise a Ticket!</button>
+                    <button type="submit"  id="mainBtn" class="btn btn-success" disabled>Raise a Ticket!</button>
                 </center>
             </form>
         </div>
