@@ -1,7 +1,7 @@
 document.getElementById("issueForm").addEventListener("submit", saveIssue)
 
 function saveIssue(e) {
-    var name = document.getElementById("name").value
+    var empname = document.getElementById("name").value
     var empid = document.getElementById("empid").value
     var department = document.getElementById("department").value
 	var description = document.getElementById("description").value
@@ -16,7 +16,7 @@ function saveIssue(e) {
     
 	var issueStatus = "Open"
 
-	// console.log(name)
+	// console.log(empname)
 	// console.log(empid)
 	// console.log(department)
 	// console.log(description)
@@ -26,7 +26,7 @@ function saveIssue(e) {
     var issue = {
         id: issueId,
         ticket: ticketNo,
-		name: name,
+		name: empname,
         empid: empid,
         dep: department,
 		desc: description,
@@ -61,6 +61,8 @@ var setStatusClosed = (id) => {
 
     localStorage.setItem("issues", JSON.stringify(issues))
 
+	e.preventDefault()
+
     getAllIssues()
 }
 
@@ -76,6 +78,18 @@ var deleteIssue = (id) => {
 	localStorage.setItem("issues", JSON.stringify(issues))
 
 	getAllIssues()
+}
+
+var validateBtn = () => {
+	var empname = document.getElementById("name").value
+    var empid = document.getElementById("empid").value
+    var department = document.getElementById("department").value
+	var description = document.getElementById("description").value
+
+	var submitBtn = document.getElementById("mainBtn")
+
+	if(empname != "" && empid != "" && department != "none" && description != "")
+		submitBtn.disabled = false
 }
 
 // var copyTicket = () => {
