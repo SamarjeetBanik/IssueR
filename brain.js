@@ -78,6 +78,11 @@ var deleteIssue = (id) => {
 	getAllIssues()
 }
 
+// var copyTicket = () => {
+// 	var copyText = document.getElementById("ticket")
+// 	navigator.clipboard.writeText(copyText.value)
+// }
+
 var getAllIssues = () => {
 	var issues = JSON.parse(localStorage.getItem("issues"))
 	var issuesList = document.getElementById("issuesList")
@@ -96,14 +101,15 @@ var getAllIssues = () => {
 										// '<h3 class="card-header">' + issues[i].desc + '</h3>' +
 										'<div class="card-body">'+
 											'<h6>Issue ID: ' + issues[i].id + '</h6>' +
-											'<h5>Ticket No.: ' + issues[i].ticket + '</h5>' +
+											'<h5>Ticket No.: <span id="ticket">' + issues[i].ticket + '</span></h5>' +
 											'<p><span class="badge rounded-pill bg-success text-light">' + issues[i].status + '</span></p>' +
 											'<h3>' + issues[i].desc + '</h3>' +
 											'<p><b>Issued By</b>: ' + issues[i].name + ' - ' + issues[i].empid + '</p>' +
 											// '<p><b>Assigned To</b>: <a href="' + assignedContact + '@gmail.com">' + assigned + '</a></p>' +
 											'<p><b>Assigned To</b>: ' + issues[i].assist + ' (' + issues[i].assistEmail + '@gmail.com)</p>' +
 											'<button class="btn btn-warning" onclick="setStatusClosed(\''+ issues[i].id +'\')">Close</button> ' +
-											'<button class="btn btn-danger" onclick="deleteIssue(\''+ issues[i].id +'\')">Delete</button>' +
+											'<button class="btn btn-danger" onclick="deleteIssue(\''+ issues[i].id +'\')">Delete</button> ' +
+											// '<button class="btn btn-primary" onclick="copyTicket()"><i class="fas fa-copy"></i></button>'
 										'</div>' +
 									'</div><br>'
 		} else {
