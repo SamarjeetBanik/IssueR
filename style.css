@@ -1,0 +1,23 @@
+@media screen and (max-width: 768px)
+{
+    .heading {
+        font-size: 1.8em;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 413px)
+{
+    .heading {
+        font-size: 1.5em;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 349px)
+{
+    .heading {
+        font-size: 1.4em;
+        margin-top: 15px;
+    }
+}
