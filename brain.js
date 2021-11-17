@@ -47,6 +47,8 @@ function saveIssue(e) {
 
     document.getElementById("issueForm").reset()
 
+	e.preventDefault()
+
     getAllIssues()
 }
 
@@ -60,8 +62,6 @@ var setStatusClosed = (id) => {
     }
 
     localStorage.setItem("issues", JSON.stringify(issues))
-
-	e.preventDefault()
 
     getAllIssues()
 }
