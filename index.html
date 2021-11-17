@@ -18,7 +18,7 @@
 <body onload="getAllIssues()">
     <div class="container">
         <center><h1 class="heading">IssueR - An Issue Tracker App</h1></center>
-        <div class="jumbotron">
+        <div class="jumbotron py-5">
             <h3>Add New Issue:</h3>
             <form id="issueForm" autocomplete="off">
                 <div class="form-group">
@@ -49,6 +49,7 @@
                     <input type="file" class="form-control-file" id="attach">
                 </div>
                 <center>
+                    <small class="text-danger">asterick (*) marked fields are required!</small><br>
                     <button type="submit"  id="mainBtn" class="btn btn-success" disabled>Raise a Ticket!</button>
                 </center>
             </form>
