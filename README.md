@@ -13,9 +13,9 @@ To view the live demo of the app, [click here](https://samarjeetbanik.github.io/
 - "Close" and "Delete" Functionality
 - Form Validation
 
-<h4><b>If you liked it, then don't forget to give a star 🌟 to this repo, and if you feel something could be better, then post it <a href="https://github.com/SamarjeetBanik/IssueR/issues/new">here</a>.</b></h4>
-
 <div align="center">
+<h4><b>If you liked it, then don't forget to give a :star: to this repo, and if you feel something could have been better, then post it <a href="https://github.com/SamarjeetBanik/IssueR/issues/new">here</a>.</b></h4>
+
 <h3>Built with :heart: by <a href="https://github.com/SamarjeetBanik">Samarjeet</a></h3>
 <h1>THANK YOU!</h1>
 </div>
