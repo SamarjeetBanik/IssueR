@@ -87,9 +87,15 @@ var validateBtn = () => {
 	var description = document.getElementById("description").value
 
 	var submitBtn = document.getElementById("mainBtn")
+	var mustMessage = document.getElementById("must")
 
-	if(empname != "" && empid != "" && department != "none" && description != "")
+	if(empname != "" && empid != "" && department != "none" && description != "") {
 		submitBtn.disabled = false
+		mustMessage.innerHTML = ""
+	} else {
+		submitBtn.disabled = true
+		mustMessage.innerHTML = "asterick (*) marked fields are required!"
+	}
 }
 
 // var copyTicket = () => {
