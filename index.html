@@ -23,15 +23,15 @@
             <form id="issueForm" autocomplete="off">
                 <div class="form-group">
                     <label for="name">Name <b><span class="text-danger">*</span></b></label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your Name">
+                    <input type="text" class="form-control" id="name" onkeyup="validateBtn()" placeholder="Enter your Name">
                 </div>
                 <div class="form-group">
                     <label for="empid">Employee ID <b><span class="text-danger">*</span></b></label>
-                    <input type="tel" class="form-control" id="empid" placeholder="Enter your Employee ID">
+                    <input type="tel" class="form-control" id="empid" onkeyup="validateBtn()" placeholder="Enter your Employee ID">
                 </div>
                 <div class="form-group">
                     <label for="department">Department <b><span class="text-danger">*</span></b></label>
-                    <select id="department" class="form-control" style="cursor: pointer;">
+                    <select id="department" class="form-control" style="cursor: pointer;" onclick="validateBtn()">
                         <option value="none">Select a Department</option>
                         <option value="HR">HR</option>
                         <option value="IT">IT</option>
@@ -49,7 +49,7 @@
                     <input type="file" class="form-control-file" id="attach">
                 </div>
                 <center>
-                    <small class="text-danger">asterick (*) marked fields are required!</small><br>
+                    <small id="must" class="text-danger">asterick (*) marked fields are required!</small><br>
                     <button type="submit"  id="mainBtn" class="btn btn-success" disabled>Raise a Ticket!</button>
                 </center>
             </form>
