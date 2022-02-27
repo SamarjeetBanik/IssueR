@@ -1,4 +1,4 @@
-document.getElementById("issueForm").addEventListener("submit", saveIssue)
+// document.getElementById("issueForm").addEventListener("submit", saveIssue)
 
 function saveIssue(e) {
     var empname = document.getElementById("name").value
